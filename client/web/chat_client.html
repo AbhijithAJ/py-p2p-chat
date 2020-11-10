@@ -1,0 +1,142 @@
+<html>
+<style>
+    * {
+        font-family: 'Avenir';
+    }
+
+    .body {
+        padding: 10px;
+        padding-bottom: 60px;
+        /* Height of the footer */
+    }
+
+    .msger-inputarea {
+
+        display: flex;
+        padding: 5px;
+        border-top: var(--border);
+        background: rgb(51, 93, 184);
+    }
+
+    .msger-inputarea * {
+        padding: 5px;
+        border: none;
+        border-radius: 3px;
+        font-size: 1em;
+    }
+
+    .msger-input {
+        flex: 1;
+        background: #ddd;
+    }
+
+    .msger-send-btn {
+        margin-left: 10px;
+        background: rgb(16, 198, 243);
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.23s;
+    }
+
+    .msger-send-btn:hover {
+        background: rgb(0, 180, 50);
+    }
+
+    .bubbleWrapper {
+        padding: 1px 10px;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-self: flex-end;
+        color: rgb(255, 255, 255);
+    }
+
+    .inlineContainer {
+        display: inline-flex;
+    }
+
+    .inlineContainer.own {
+        flex-direction: row-reverse;
+    }
+
+    .inlineIcon {
+        width: 20px;
+        object-fit: contain;
+    }
+
+    .ownBubble {
+        min-width: 60px;
+        max-width: 700px;
+        padding: 5px 8px;
+        margin: 6px 8px;
+        background-color: #5b5377;
+        border-radius: 16px 16px 0 16px;
+        border: 1px solid #443f56;
+    }
+
+    .otherBubble {
+        min-width: 60px;
+        max-width: 700px;
+        padding: 5px 8px;
+        margin: 6px 8px;
+        background-color: #6C8EA4;
+        border-radius: 16px 16px 16px 0;
+        border: 1px solid #54788e;
+    }
+
+    .own {
+        align-self: flex-end;
+    }
+
+    .other {
+        align-self: flex-start;
+    }
+
+    .AJ_sender {
+        position: sticky;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    span.own,
+    span.other {
+        font-size: 14px;
+        color: grey;
+    }
+</style>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- for thick application (added by aj) -->
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+
+<body class='body'>
+    <div class="bubbleWrapper" id="append">  <!-- js will append html data here  -->
+</body>
+<footer class="footer">
+    <div class="fixed-bottom">
+        <form class="msger-inputarea" style=" margin-bottom: 0px" id="theFormID">
+            <input type="text" class="msger-input" id="input" placeholder="Enter your message...">
+            <button type="submit" class="msger-send-btn" onclick="sendto()">Send</button>
+        </form>
+    </div>
+</footer>
+
+</html>
